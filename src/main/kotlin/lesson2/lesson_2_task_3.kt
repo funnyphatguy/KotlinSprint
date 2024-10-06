@@ -1,4 +1,5 @@
 
+ const val FOR_MINUTES_TO_HOUR = 60
 
 fun main() {
 
@@ -8,9 +9,9 @@ fun main() {
 
     val overallMinutes = trainTravelminutes + startMinutes
 
-    val inWayHours = overallMinutes / 60
+    val inWayHours = overallMinutes / FOR_MINUTES_TO_HOUR
 
-    val remainingInWayMinutes = overallMinutes % 60
+    val remainingInWayMinutes = overallMinutes % FOR_MINUTES_TO_HOUR
 
     val overallHours = startHours+inWayHours
 
