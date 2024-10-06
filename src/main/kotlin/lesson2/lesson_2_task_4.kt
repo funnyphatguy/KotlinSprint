@@ -1,14 +1,15 @@
 package org.example.lesson2
 
+const val BUFF = 0.2
 
 fun main() {
 
-    var chrystalOre = 7f
-    var metalOre = 11f
+    val chrystalOre = 7f
+    val metalOre = 11f
 
 
-    var chrystaOreBuff = chrystalOre / 100 * 20
-    var metalOreBuff = metalOre / 100 * 20
+    val chrystaOreBuff = chrystalOre * BUFF
+    val metalOreBuff = metalOre * BUFF
 
 
     println("Бонусная кристалическая руда ${chrystaOreBuff.toInt()}")
