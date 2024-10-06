@@ -7,7 +7,6 @@ fun main() {
     val numberOfInterns = 30
     val internsSalary = 20000
 
-
     val allWorkersSalary = workersSalary * numberOfWorkers
     println(allWorkersSalary)
 
@@ -16,6 +15,5 @@ fun main() {
 
     val averageSalary = overallSalary / (numberOfWorkers + numberOfInterns)
     println(averageSalary)
-
 
 }
