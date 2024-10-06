@@ -2,10 +2,12 @@
 fun main() {
 
     val name = "Алешка"
-    val greetingDay = "Добрый день"
-    val greetingEvening = "Добрый вечер"
+    var greeting: String
 
-    println("$greetingDay, $name")
-    println("$greetingEvening, $name")
+    greeting = "Добрый день, $name"
+    println(greeting)
+
+    greeting = "Добрый вечер, $name"
+    println(greeting)
 
 }
