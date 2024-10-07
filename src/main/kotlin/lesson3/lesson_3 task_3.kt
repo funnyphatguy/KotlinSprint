@@ -1,7 +1,7 @@
 
 fun main() {
 
-    val number = readLine()!!.toInt()
+    val number = readln().toInt()
 
     println("""
       $number x 1 = ${number*1} 
