@@ -1,4 +1,3 @@
-package org.example.lesson4
 
 const val MINIMUM_WEIGHT = 35
 const val MAXIMUM_VOLUME = 100
