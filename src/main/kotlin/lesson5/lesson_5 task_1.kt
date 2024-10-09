@@ -1,8 +1,10 @@
-
 fun main() {
-    println("Докажите, что вы не бот. Сколько будет 7+3? Ответ введите ниже:")
+    var a = 7
+    var b = 3
 
-        val answer = readln().toInt()
+    println("Докажите, что вы не бот. Сколько будет $a + $b? Ответ введите ниже:")
 
-        if (answer == 10) println("Добро пожаловать") else println("Доступ запрещен")
+    val answer = readln().toInt()
+
+    if (answer == a + b) println("Добро пожаловать") else println("Доступ запрещен")
 }
