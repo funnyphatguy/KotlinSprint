@@ -7,10 +7,12 @@ fun main() {
 
     println("Введите логин:")
     val user = readln()
-    println("Введите пароль:")
+    if (user != REGISTRED_USER) println("Вы не зарегестрированы в системе. Хотите зарегестрироваться?")
+    else if (user == REGISTRED_USER) println("Введите пароль")
+
     val password = readln()
-
-    if (user == REGISTRED_USER && password == REGISTRED_PASSWORD) println("Добро пожаловать")
-    else println("Вы не зарегестрированы в системе. Хотите зарегестрироваться?")
-
+    when (password) {
+        REGISTRED_PASSWORD -> println("Добро пожаловать")
+        else -> println("Пароль неверный")
+    }
 }
