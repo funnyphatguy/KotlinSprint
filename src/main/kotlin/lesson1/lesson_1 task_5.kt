@@ -1,12 +1,15 @@
 package org.example.lesson1
+
 const val SECONDS = 6480
+const val MINUTES_AND_SECONDS = 60
+
 fun main() {
 
-    val minutes = SECONDS / 60
-    val hours = minutes / 60
-    val remainingSeconds = SECONDS % 60
-    val remainingMinutes = minutes % 60
+    val minutes = SECONDS / MINUTES_AND_SECONDS
+    val hours = minutes / MINUTES_AND_SECONDS
+    val remainingSeconds = SECONDS % MINUTES_AND_SECONDS
+    val remainingMinutes = minutes % MINUTES_AND_SECONDS
 
-    println("${String.format("%02d", hours)}:${String.format("%02d", remainingMinutes)}:${String.format("%02d", remainingSeconds)}")
+    println("%02d:%02d:%02d".format(hours, remainingSeconds, remainingMinutes))
 
 }
