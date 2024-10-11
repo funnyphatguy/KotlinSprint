@@ -1,18 +1,23 @@
+
+const val FIRST = 1
+const val SECOND = 0
+
 fun main() {
 
-    var arms = 5
-    var press = 5
-    val legs = arms++
-    val back = press++
+    var arms = FIRST
+    var press = FIRST
+    val legs = SECOND
+    val back = SECOND
 
-    val day_of_the_train = 5
+    val dayOfTheTrain = 2
+    val isEvenDay = dayOfTheTrain % 2
 
     println(
         """
-        Упражнения для рук:    ${day_of_the_train == arms}
-        Упражнения для ног:    ${day_of_the_train == legs}
-        Упражнения для спины:  ${day_of_the_train == back}
-        Упражнения для пресса: ${day_of_the_train == press}
+        Упражнения для рук:    ${isEvenDay == arms}
+        Упражнения для ног:    ${isEvenDay == legs}
+        Упражнения для спины:  ${isEvenDay == back}
+        Упражнения для пресса: ${isEvenDay == press}
 
     """.trimIndent()
     )
