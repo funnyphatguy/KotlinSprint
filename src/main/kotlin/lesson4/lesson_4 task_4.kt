@@ -1,23 +1,16 @@
-
-const val FIRST = 1
-const val SECOND = 0
-
 fun main() {
 
-    var arms = FIRST
-    var press = FIRST
-    val legs = SECOND
-    val back = SECOND
+    val dayOfTheTrain = 5
 
-    val dayOfTheTrain = 2
-    val isEvenDay = dayOfTheTrain % 2
+    val split_two = dayOfTheTrain % 2 == 0
+    val split_one = !split_two
 
     println(
         """
-        Упражнения для рук:    ${isEvenDay == arms}
-        Упражнения для ног:    ${isEvenDay == legs}
-        Упражнения для спины:  ${isEvenDay == back}
-        Упражнения для пресса: ${isEvenDay == press}
+        Упражнения для рук:    $split_one
+        Упражнения для ног:    $split_two
+        Упражнения для спины:  $split_two
+        Упражнения для пресса: $split_one
 
     """.trimIndent()
     )
