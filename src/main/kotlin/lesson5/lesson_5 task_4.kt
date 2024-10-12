@@ -8,9 +8,8 @@ fun main() {
     println("Введите логин:")
     val user = readln()
     if (user != REGISTRED_USER) println("Вы не зарегестрированы в системе. Хотите зарегестрироваться?")
-    else if (user == REGISTRED_USER) println("Введите пароль")
-
-    if (user == REGISTRED_USER) {
+    else if (user == REGISTRED_USER) {
+        println("Введите пароль")
         val password = readln()
         when (password) {
             REGISTRED_PASSWORD -> println("Добро пожаловать")
