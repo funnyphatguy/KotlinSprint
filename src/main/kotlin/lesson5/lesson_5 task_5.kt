@@ -1,5 +1,4 @@
 package org.example.lesson5
-
 import kotlin.random.Random
 
 const val MIN_NUM = 0
