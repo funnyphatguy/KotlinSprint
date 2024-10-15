@@ -20,11 +20,8 @@ fun main() {
     val randomizer = List(3) { Random.nextInt(MIN_NUM, MAX_NUM) }
 
     val intersection = listOfNumber.intersect(randomizer)
-    var count = 0
-    for (element in intersection) {
-        count++
-    }
-    when (count){
+
+    when (intersection.size) {
         0 -> println("Вы не угадали ни одного числа")
         1 -> println("Вы угадали одно число, вы выиграли утешительный приз")
         2 -> println("Вы угадали два числа и выиграли крупный приз")
