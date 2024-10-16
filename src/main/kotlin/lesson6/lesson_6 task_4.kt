@@ -16,9 +16,12 @@ fun main() {
     while (attempt <= 5 && attempt > 0) {
         --attempt
         var number = readln().toInt()
-        if (number == randomizer)
+        if (number == randomizer) {
             println("Это была великолепная игра!")
-        else println("Неверно, количество попыток: ${--counter}")
+            break
+        } else {
+            println("Неверно, количество попыток: ${--counter}")
+        }
     }
 
     println("Было загадано число $randomizer")
