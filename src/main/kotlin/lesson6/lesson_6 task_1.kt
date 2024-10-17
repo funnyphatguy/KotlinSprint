@@ -12,8 +12,8 @@ fun main() {
         println("Придумайте пароль:")
         val passwordEntered = readln().lowercase()
 
-        if (login == loginEntered && password == passwordEntered) println("Авторизация прошла успешно")
-
     } while (((login != loginEntered) || password != passwordEntered))
+
+    println("Авторизация прошла успешно")
 
 }
