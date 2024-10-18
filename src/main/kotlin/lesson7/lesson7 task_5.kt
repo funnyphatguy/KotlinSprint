@@ -11,14 +11,18 @@ fun main() {
 
     val numbers = '0'..'9'
     val chars = 'A'..'Z'
+    val smallChars = 'a'..'z'
 
-    val password = List(length) {
-        when ((0..2).random()) {
-            0 -> numbers.random()
-            1 -> chars.random()
-            else -> chars.random().lowercase()
-        }
-    }
+    val password = mutableListOf<Char>()
+    password.add(numbers.random())
+    password.add(chars.random())
+    password.add(smallChars.random())
+
+    val allChars = numbers + chars + smallChars
+    for (i in 3..length)
+        password.add(allChars.random())
+
+    password.shuffle()
 
     println(password.joinToString(""))
 }
