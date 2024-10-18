@@ -20,7 +20,7 @@ fun main() {
 
     recipe.set(change - 1, "$newIngridient")
 
-    println("Новый список ингридиентов для блюда \"бургер\":")
+    println("Готово! Вы сохранили следующий список:")
     for (i in recipe) println(
         "${recipe.indexOf(i) + 1}) $i"
     )
