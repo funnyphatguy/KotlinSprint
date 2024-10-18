@@ -4,11 +4,9 @@ fun main() {
 
     println("Введите число больше нуля")
 
-    var number = readln().toInt()
+    val number = readln().toInt()
 
-    var range = 0 until number
-
-    for (i in range step 2)
+    for (i in 0..number step 2)
         if (i == 0) continue
         else println(i)
 }
