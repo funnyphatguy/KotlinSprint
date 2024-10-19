@@ -1,14 +1,14 @@
 package org.example.lesson8
 
 fun main() {
-    val mo = 8
-    val tu = 5
-    val we = 51
-    val th = 15
-    val fr = 5
-    val sa = 51
-    val su = 15
+    val monday = 8
+    val tuesday = 5
+    val wensday = 51
+    val thursday = 15
+    val friday = 5
+    val saturday = 51
+    val sunday = 15
 
-    val array = arrayOf(mo, tu, we, th, fr, sa, su)
-    println("Всего просмотров: ${array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6]}")
+    val daysOfWeek = arrayOf(monday, tuesday, wensday, thursday, friday, saturday, sunday)
+    println("Всего просмотров: ${daysOfWeek.sum()}")
 }
