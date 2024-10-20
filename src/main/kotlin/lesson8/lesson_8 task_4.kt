@@ -9,8 +9,9 @@ fun main() {
     )
     println("Какой ингридиент вы хотите заменить?Введите номер")
 
-    var change = readln().toInt()
-    if (change > recipe.size + 1) {
+    var numberForChange = readln().toInt()
+
+    if (numberForChange > recipe.size) {
         println("Такого ингридиента нет в списке")
         return
     } else {
@@ -18,7 +19,7 @@ fun main() {
     }
     val newIngridient = readln().toString()
 
-    recipe.set(change - 1, "$newIngridient")
+    recipe[numberForChange - 1] = newIngridient
 
     println("Готово! Вы сохранили следующий список:")
     for (i in recipe) println(
