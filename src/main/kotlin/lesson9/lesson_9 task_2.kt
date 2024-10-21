@@ -7,8 +7,8 @@ fun main() {
     recipe.forEach { it -> println(it) }
     println("Желаете добавить еще?")
 
-    var answer = readln().lowercase()
-    if (answer == "да") {
+    var answer = readln()
+    if (answer.equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
     } else {
         return
