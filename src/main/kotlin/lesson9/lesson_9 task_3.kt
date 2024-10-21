@@ -7,12 +7,16 @@ fun main() {
     var quantity = readln().toInt()
     var portionWord: String
 
+    val onePortion = "порцию"
+    val twoToFourPortion = "порции"
+    val fiveAndMore = "порций"
+
     if (quantity == 1) {
-        portionWord = "порцию"
+        portionWord = onePortion
     } else if (quantity >= 2 && quantity < 4) {
-        portionWord = "порции"
+        portionWord = twoToFourPortion
     } else {
-        portionWord = "порций"
+        portionWord = fiveAndMore
     }
 
     val newRecipe = recipe.map { it * quantity }
