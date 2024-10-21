@@ -12,8 +12,8 @@ fun main() {
         recipe[i] = readln()
     }
     println("Ваши ингридиенты:")
-    for (recipe in recipe) {
-        println(recipe)
+    for (ingridients in recipe) {
+        println(ingridients)
     }
 
 }
