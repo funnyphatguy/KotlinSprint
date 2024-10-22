@@ -6,6 +6,7 @@ fun main() {
     val ingridients = readln().toString()
 
     val parsing = ingridients.split(", ")
+    val sortedList = parsing.sorted()
 
     if (parsing.size != 5) {
         println("нужно ввести именно пять элементов")
@@ -13,7 +14,7 @@ fun main() {
     }
 
    println("Вы ввели:")
-   val sortedList = parsing.sorted()
+
     sortedList.forEach { it -> println(it) }
 
 }
