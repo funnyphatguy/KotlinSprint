@@ -1,5 +1,6 @@
 package org.example.lesson10
 
+const val MIN_BODY_OF_THE_PASSWORD = 4
 fun main() {
 
     println("Введите логин:")
@@ -8,9 +9,12 @@ fun main() {
     println("Введите пароль:")
     val password = readln().toString()
 
-    validation(login, password)
+    validateCheck(login)
+    validateCheck(password)
+
 }
 
-fun validation(word: String, password: String) {
-    if ((word.count() < 4) || (password.count() < 4)) println("Логин или пароль недостаточно длинные")
+fun validateCheck(word: String) {
+    if ((word.count() < MIN_BODY_OF_THE_PASSWORD)) println("Логин или пароль недостаточно длинные")
+
 }
