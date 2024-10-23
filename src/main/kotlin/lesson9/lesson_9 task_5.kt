@@ -10,14 +10,11 @@ fun main() {
         var ingridient = readln()
         recipe.add(ingridient)
 
-        if (recipe.size != recipe.distinct().size) {
-            println("Имеется повтор")
-            break
-        }
     }
-    recipe.sort()
-    val firstWordCapitalizeChar = recipe[0].replaceFirstChar { it.uppercase() }
-    val result = listOf(firstWordCapitalizeChar) + recipe.drop(1)
+    val recipeSet = recipe.toSortedSet().toMutableList()
+
+    val firstWordCapitalizeChar = recipeSet[0].replaceFirstChar { it.uppercase() }
+    val result = listOf(firstWordCapitalizeChar) + recipeSet.drop(1)
     println(result.joinToString(", "))
 
 }
