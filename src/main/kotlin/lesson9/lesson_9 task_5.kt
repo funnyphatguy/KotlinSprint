@@ -11,10 +11,8 @@ fun main() {
         recipe.add(ingridient)
 
     }
-    val recipeSet = recipe.toSortedSet().toMutableList()
+    val recipeSet = recipe.toSet()
 
-    val firstWordCapitalizeChar = recipeSet[0].replaceFirstChar { it.uppercase() }
-    val result = listOf(firstWordCapitalizeChar) + recipeSet.drop(1)
-    println(result.joinToString(", "))
+    println(recipeSet.joinToString(", ").capitalize())
 
 }
