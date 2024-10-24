@@ -9,12 +9,12 @@ fun main() {
     println("Введите пароль:")
     val password = readln().toString()
 
-    validateCheck(login)
-    validateCheck(password)
-
+    if ((validateCheck(login) == false) || (validateCheck(password) == false))
+        println("Логин или пароль недостаточно длинные")
+    else println("Добро пожаловать в систему!")
 }
 
-fun validateCheck(word: String) {
-    if ((word.count() < MIN_BODY_OF_THE_PASSWORD)) println("Логин или пароль недостаточно длинные")
+fun validateCheck(word: String): Boolean {
+    return ((word.count() > MIN_BODY_OF_THE_PASSWORD))
 
 }
