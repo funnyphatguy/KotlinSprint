@@ -4,32 +4,38 @@ const val YES = "Да"
 fun main() {
 
     var count = 0
-    if (round() == "Победило человечество")
+    if (round() == true) {
         count++
+        println("Победило человечество")
+    } else {
+        println("Победила машина")
+    }
 
     println("Хотите сыграть еще раз?")
     var answer = readln().lowercase()
     while (answer == YES.lowercase()) {
-        if (round() == "Победило человечество")
+        if (round() == true) {
             count++
+            println("Победило человечество")
+        } else {
+            println("Победила машина")
+        }
         println("Хотите сыграть еще раз?")
-        answer = readln()
+        answer = readln().lowercase()
     }
     println("Человечество выиграло $count раз")
 }
 
-fun round(): String {
+fun round(): Boolean {
     val human = rollTheDice()
     val computer = rollTheDice()
 
     println("Бросает человек, у него выпало $human")
     println("Бросает компьютер, у него выпало ${computer}")
-    return if (human > computer) {
-        println("Победило человечество")
-        "Победило человечество"
+    if (human > computer) {
+        return true
     } else {
-        println("Победила машина")
-        "Победила машина"
+        return false
     }
 }
 
