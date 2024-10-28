@@ -9,9 +9,9 @@ class Сategory(
 class Recipe(
 
     val name: String,
-    val category: String,
+    val category: Сategory,
     val portionQuantity: Int,
-    val items: Map<String, String>,
+    val items: Map<Ingridient, String>,
     val infavourites: Boolean = false,
     val cookingMethod: String,
 
@@ -20,6 +20,5 @@ class Recipe(
 class Ingridient(
     val name: String,
     val quantity: Int,
-    val items: Map<String, String>,
     val infavourites: Boolean = false,
 )
