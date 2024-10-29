@@ -3,7 +3,7 @@ package org.example.lesson_11
 class Сategory(
 
     val name: String,
-    val items: List<String>,
+    val items: List<Recipe>,
 )
 
 class Recipe(
@@ -11,7 +11,7 @@ class Recipe(
     val name: String,
     val category: Сategory,
     val portionQuantity: Int,
-    val items: Map<Ingridient, String>,
+    val items: List<Ingridient>,
     val infavourites: Boolean = false,
     val cookingMethod: String,
 
