@@ -5,11 +5,10 @@ fun main() {
     var rangeNumbers = 0..9
     val rangeChars = 'a'..'z'
 
-    val password =
-        "${rangeChars.random()}${rangeNumbers.random()}" +
-                "${rangeChars.random()}${rangeNumbers.random()}" +
-                "${rangeChars.random()}${rangeNumbers.random()}"
+    for (i in 3 downTo  1) {
+        val numbers = rangeNumbers.random()
+        val chars = rangeChars.random()
+        println("$numbers$chars")
 
-    println("Ваш пароль $password")
-
+    }
 }
