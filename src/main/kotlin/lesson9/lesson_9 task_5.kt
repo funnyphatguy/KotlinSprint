@@ -13,6 +13,6 @@ fun main() {
     }
     val recipeSet = recipe.toSet()
 
-    println(recipeSet.joinToString(", ").capitalize())
+    println(recipeSet.joinToString(", ").replaceFirstChar { it.uppercase() })
 
 }
