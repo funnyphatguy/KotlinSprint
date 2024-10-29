@@ -15,6 +15,5 @@ class DayTemperaturee(
 fun main() {
 
     val monday = DayTemperaturee(270)
-    monday.dayTemp
     monday.info()
 }
