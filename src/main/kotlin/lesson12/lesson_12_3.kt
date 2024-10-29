@@ -9,12 +9,12 @@ class DayTemperaturee(
 
 
     fun info() =
-        println("Дневная температура : $dayTemp градусов\nНочная температура : $nightTemp градусов,\nНаличие осадок :$precipitation")
+        println("Дневная температура: $dayTemp градусов\nНочная температура: $nightTemp градусов,\nНаличие осадок: $precipitation")
 }
 
 fun main() {
 
     val monday = DayTemperaturee(270)
-    monday.dayTemp = 36
+    monday.dayTemp
     monday.info()
 }
