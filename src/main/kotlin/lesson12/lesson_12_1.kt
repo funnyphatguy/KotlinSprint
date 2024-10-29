@@ -1,6 +1,6 @@
 package org.example.lesson12
 
-class Temperature() {
+class Temperature {
 
     var dayTemp: Int = 0
     var nightTemp: Int = 0
