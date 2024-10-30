@@ -1,10 +1,14 @@
 package org.example.lesson12
 
+import kotlin.math.roundToInt
+
+const val KELVIN = 273.15
+
 class DayTemperaturee(
     val KelvinTemp: Int
 ) {
-    var dayTemp: Int = KelvinTemp - 273
-    val nightTemp: Int = KelvinTemp - 273
+    var dayTemp: Int = (KelvinTemp - KELVIN).roundToInt()
+    val nightTemp: Int = (KelvinTemp - KELVIN).roundToInt()
     val precipitation: Boolean = false
 
 
