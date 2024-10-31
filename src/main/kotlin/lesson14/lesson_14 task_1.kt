@@ -11,10 +11,10 @@ package org.example.lesson14
 // Отнаследованные классы должны переопределять необходимые свойства. Создай по одному экземпляру каждого типа корабля.
 
 open class Liner(
-    speed: Int = 10,
-    capacity: Int = 10,
-    crew: Int = 10,
-    icebreaker: Boolean = false
+    val speed: Int = 10,
+    val capacity: Int = 10,
+    val crew: Int = 10,
+    val icebreaker: Boolean = false
 )
 
 class CargoShip() : Liner(
