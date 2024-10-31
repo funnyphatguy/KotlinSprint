@@ -23,16 +23,17 @@ class Contact(val name: String?, val number: Long?, val company: String?) {
 
 fun main() {
 
-    val data = Contact(name = "Aleksei", number = 44542624, company = null)
 
     val contacts = mutableListOf(
-        Contact(name = "Артем", number = 5634543, company = "Газпром"),
+        Contact(name = "Артем", number = 5634543, company = "Майкрософт"),
         Contact(name = "Егор", number = 98675467, company = "null"),
         Contact(name = "Петр", number = 46276354, company = null),
         Contact(name = "Елисей", number = 57365435, company = null),
         Contact(name = "Златояр", number = 9747542, company = "Майкрософт"),
     )
 
-    contacts.forEach { it -> it.getInfo() }
+    val list = contacts.distinctBy { it.company }
+
+    list.forEach { it -> it.getInfo() }
 
 }
