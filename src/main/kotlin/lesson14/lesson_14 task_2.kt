@@ -34,9 +34,6 @@ class TheCargoShip() : TheLiner(
     crew = 9
 ) {
     override fun loadingMethod() = println("Погрузочный кран активирован")
-    override fun info() {
-        super.info()
-    }
 
 }
 
@@ -48,14 +45,11 @@ class TheIcebreaker() : TheLiner(
     icebreaker = true
 ) {
     override fun loadingMethod() = println("Ворота со стороны кормы открыты")
-    override fun info() {
-        super.info()
-    }
 }
 
 fun main() {
 
-    val liner = TheLiner().also { it.info() }
+    val liner = TheLiner(name = "Лайнер").also { it.info() }
 
     val cargo = TheCargoShip().also { it.info() }
 
