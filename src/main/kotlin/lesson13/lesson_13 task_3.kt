@@ -16,7 +16,7 @@ class Contact(val name: String?, val number: Long?, val company: String?) {
             """  
                |- Имя : $name
                |- Номер: $number
-               |- Компания: ${company ?: "<не указано>"}""".trimMargin()
+               |- Компания: $company """.trimMargin()
         )
     }
 }
@@ -29,11 +29,11 @@ fun main() {
         Contact(name = "Егор", number = 98675467, company = "null"),
         Contact(name = "Петр", number = 46276354, company = null),
         Contact(name = "Елисей", number = 57365435, company = null),
-        Contact(name = "Златояр", number = 9747542, company = "Майкрософт"),
+        Contact(name = "Златояр", number = 9747542, company = "Лукоил"),
     )
 
-    val list = contacts.distinctBy { it.company }
+    val list = contacts.mapNotNull { if (it.company != null) it else null }
 
-    list.forEach { it -> it.getInfo() }
+    list.forEach { it.getInfo() }
 
 }
