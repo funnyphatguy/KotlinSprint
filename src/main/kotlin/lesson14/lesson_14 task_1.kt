@@ -14,8 +14,8 @@ open class Liner(
     val speed: Int = 10,
     val capacity: Int = 10,
     val crew: Int = 10,
-    val icebreaker: Boolean = false
-)
+
+    )
 
 class CargoShip() : Liner(
     speed = 8,
@@ -23,9 +23,9 @@ class CargoShip() : Liner(
     crew = 9
 )
 
-class Icebreaker() : Liner(
+class Icebreaker(val icebreaker: Boolean = true) : Liner(
     speed = 6,
     capacity = 6,
     crew = 8,
-    icebreaker = true
-)
+
+    )
