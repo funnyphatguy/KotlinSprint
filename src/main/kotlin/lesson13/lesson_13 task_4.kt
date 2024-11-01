@@ -9,28 +9,13 @@ package org.example.lesson13
 //
 //Выведи созданные объекты в консоль методом класса.
 
-class Contacts {
-    var name: String? = null
-    var number: Long? = null
-    var company: String? = null
-
-    init {
-        println("Введите имя")
-        name = readln()
-
-        println("Введите номер")
-        number = readln().toLongOrNull()
-        if (number == null) println("Вы не ввели номер, контакт не будет добавлен в телефонную книжку")
-
-        println("Введите компанию")
-        company = readln()
-
-    }
-
+class Contacts(
+    var name: String? = null,
+    var number: Long? = null,
+    var company: String? = null,
+) {
     fun getInfo() {
-
-        if (number == null) return
-        else println(
+        println(
             """  
                |- Имя : $name
                |- Номер: $number
@@ -39,12 +24,29 @@ class Contacts {
     }
 }
 
+fun createContact(): Contacts {
+
+    println("Введите имя")
+    val name = readln()
+
+    println("Введите номер")
+    val number = readln().toLongOrNull()
+    if (number == null) {
+        println("Вы не ввели номер, контакт не будет добавлен в телефонную книжку")
+        return Contacts(null, null, null)
+    }
+
+    println("Введите компанию")
+    val company = readln()
+
+    return Contacts(name, number, company)
+}
+
 fun main() {
-    val contacts = listOf(
-        Contacts(), Contacts(), Contacts(), Contacts(), Contacts()
-    )
 
-    val list = contacts.distinctBy { it.company }
+    val contacts = List(2) { createContact() }
 
-    list.forEach { it -> it.getInfo() }
+    val list = contacts.mapNotNull { it }.distinctBy { it.company }
+
+    list.forEach { it.getInfo() }
 }
