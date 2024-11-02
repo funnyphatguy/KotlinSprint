@@ -26,7 +26,7 @@ abstract class SpaceBodie(val name: String, val atmosphere: Boolean, val liveabi
 
         fun satellitesAdd(satelite: Satelite) {
             satellites.add(satelite)
-            println("Первый спутник $name - ${satelite.name}")
+            println("Спутник $name - ${satelite.name}")
         }
 
     }
