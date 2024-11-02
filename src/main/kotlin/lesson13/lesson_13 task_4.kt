@@ -24,7 +24,7 @@ class Contacts(
     }
 }
 
-fun createContact(): Contacts {
+fun createContact(): Contacts? {
 
     println("Введите имя")
     val name = readln()
@@ -33,7 +33,7 @@ fun createContact(): Contacts {
     val number = readln().toLongOrNull()
     if (number == null) {
         println("Вы не ввели номер, контакт не будет добавлен в телефонную книжку")
-        return Contacts(null, null, null)
+        return null
     }
 
     println("Введите компанию")
@@ -44,9 +44,9 @@ fun createContact(): Contacts {
 
 fun main() {
 
-    val contacts = List(2) { createContact() }
+    val contacts = List(2) { createContact() }.filterNotNull()
 
-    val list = contacts.mapNotNull { it }.distinctBy { it.company }
+    val list = contacts.distinctBy { it.company }
 
     list.forEach { it.getInfo() }
 }
