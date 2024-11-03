@@ -7,39 +7,45 @@ package org.example.lesson_15
 //- выведи сообщения в консоль, о том как они могут передвигаться.
 
 interface Floating {
-
-    fun fishMoving()
+    fun floatingMoving()
 }
 
 interface Flying {
-    fun birdMoving()
+    fun flyingMoving()
 }
 
 class Carp() : Floating {
-    override fun fishMoving() {
-        println("Рыба плавает")
+    override fun floatingMoving() {
+        println("Карась плавает")
     }
 }
 
 class Seagull() : Flying {
-    override fun birdMoving() {
+    override fun flyingMoving() {
         println("Чайка летает")
     }
 }
 
-class Duck() : Flying {
-    override fun birdMoving() {
+class Duck() : Flying, Floating {
+    override fun flyingMoving() {
         println("Утка летает")
+    }
+
+    override fun floatingMoving() {
+        println("Утка плавает")
     }
 }
 
 
 fun main() {
 
-    val duck = Duck().also { it.birdMoving() }
+    val duck = Duck().also {
+        it.flyingMoving()
+        it.floatingMoving()
+    }
 
-    val seagull = Seagull().also { it.birdMoving() }
+    val seagull = Seagull().also { it.flyingMoving() }
 
-    val carp = Carp().also { it.fishMoving() }
+    val carp = Carp().also { it.floatingMoving() }
 
 }
