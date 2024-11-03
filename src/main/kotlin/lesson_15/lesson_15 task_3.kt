@@ -15,19 +15,6 @@ abstract class People(val nickname: String, val level: String, val admin: Boolea
 
     abstract fun userRead()
 
-    fun adminDelete() {
-        when (admin) {
-            true -> println("$level  $nickname удаляет сообщение")
-            false -> println("У $nickname нет права администратора")
-        }
-    }
-
-    fun adminUserDelete() {
-        when (admin) {
-            true -> println("$level  $nickname удаляет пользователя")
-            false -> println("У $nickname нет права администратора")
-        }
-    }
 }
 
 class User(nickname: String, level: String, admin: Boolean = false) : People(nickname, level, admin) {
@@ -49,8 +36,22 @@ class Admin(nickname: String, level: String, admin: Boolean = true) : People(nic
     override fun userRead() {
         println("$level  $nickname читает сообщение")
     }
-}
 
+    fun adminDelete() {
+        when (admin) {
+            true -> println("$level  $nickname удаляет сообщение")
+            false -> println("У $nickname нет права администратора")
+        }
+    }
+
+    fun adminUserDelete() {
+        when (admin) {
+            true -> println("$level  $nickname удаляет пользователя")
+            false -> println("У $nickname нет права администратора")
+        }
+    }
+
+}
 
 fun main() {
 
