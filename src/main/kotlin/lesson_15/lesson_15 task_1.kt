@@ -6,28 +6,28 @@ package org.example.lesson_15
 //- создай для каждого существа классы, реализующие соответствующие интерфейсы;
 //- выведи сообщения в консоль, о том как они могут передвигаться.
 
-interface Fish {
+interface Floating {
 
     fun fishMoving()
 }
 
-interface Bird {
+interface Flying {
     fun birdMoving()
 }
 
-class Carp() : Fish {
+class Carp() : Floating {
     override fun fishMoving() {
         println("Рыба плавает")
     }
 }
 
-class Seagull() : Bird {
+class Seagull() : Flying {
     override fun birdMoving() {
         println("Чайка летает")
     }
 }
 
-class Duck() : Bird {
+class Duck() : Flying {
     override fun birdMoving() {
         println("Утка летает")
     }
