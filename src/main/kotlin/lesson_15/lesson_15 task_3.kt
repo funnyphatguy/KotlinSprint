@@ -16,7 +16,6 @@ abstract class People(val nickname: String, val level: String, val admin: Boolea
     abstract fun userRead()
 
 }
-
 class User(nickname: String, level: String, admin: Boolean = false) : People(nickname, level, admin) {
 
     override fun userWrite() {
