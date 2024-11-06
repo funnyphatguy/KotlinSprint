@@ -7,20 +7,18 @@ package org.example.lesson_16
 //
 //Выведи информацию о корректности введенного пароля.
 
-class User() {
-
-    val login = "Алешка"
-    private val password: Int = 34452
-
+class User(
+    val login: String ,
+    private val password: Int
+) {
     fun passwordCheck(input: Int): Boolean {
-
         return input == password
     }
 }
 
 fun main() {
 
-    val dff = User()
+    val dff = User("Алешка",34452)
     val input = 34452
     println("Результат проверки пароля ${dff.passwordCheck(input)}")
 
