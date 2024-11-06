@@ -21,5 +21,4 @@ fun main() {
     val dff = User("Алешка",34452)
     val input = 34452
     println("Результат проверки пароля ${dff.passwordCheck(input)}")
-
 }
