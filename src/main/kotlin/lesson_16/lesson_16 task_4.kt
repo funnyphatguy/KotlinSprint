@@ -13,13 +13,21 @@ class _Order(
     var status: String = "Готовится"
 ) {
 
+    var newStatus = ""
+    fun manager() {
+        println("Заявка менеджеру принята")
+        newStatus = "Готов к выдаче"
+    }
+
     fun orderChange(newStatus: String) {
         if (newStatus == "Готов к выдаче") status = "Готов к выдаче"
     }
 }
+
 fun main() {
     val order = _Order()
     println("${order.status}")
-    order.orderChange("Готов к выдаче")
+    order.manager()
+    order.orderChange(order.newStatus)
     println("${order.status}")
 }
