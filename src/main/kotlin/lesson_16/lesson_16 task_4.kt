@@ -9,8 +9,8 @@ package org.example.lesson_16
 // Она будет принимать новый статус и обращаться к внутреннему методу класса для изменения статуса.
 
 class _Order(
-    val number: Int = 2,
-    var status: String = "Готовится"
+    private val number: Int = 2,
+    private var status: String = "Готовится"
 ) {
 
     var newStatus = ""
@@ -19,15 +19,19 @@ class _Order(
         newStatus = "Готов к выдаче"
     }
 
-    fun orderChange(newStatus: String) {
+    private fun orderChange(newStatus: String):String {
         if (newStatus == "Готов к выдаче") status = "Готов к выдаче"
+        return status
     }
+
+
+    fun newOrderChange() = orderChange(newStatus)
+
 }
 
 fun main() {
     val order = _Order()
-    println("${order.status}")
+
     order.manager()
-    order.orderChange(order.newStatus)
-    println("${order.status}")
+    println(order.newOrderChange())
 }
