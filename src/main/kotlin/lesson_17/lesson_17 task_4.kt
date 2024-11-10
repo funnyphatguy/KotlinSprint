@@ -8,23 +8,26 @@ package org.example.lesson_17
 //
 //Сымитировать прибытие посылки в новый пункт обработки, протестировать изменение счетчика. При реализации использовать сеттер.
 
-class Parcel(parcelNumber: Int) {
+class Parcel(parcelNumber: Int, parcelPlace: String) {
 
 
-    var parcelPlace = "Начальное местоположение"
+    var parcelPlace = parcelPlace
         set(value) {
             field = value
-            if (value != "Начальное местоположение") counter++
+            if (value != "") counter++
         }
     var counter = 0
 }
 
 fun main() {
 
-    val parcel = Parcel(3)
+    val parcel = Parcel(3, "Начало")
     println("${parcel.parcelPlace}")
     println("${parcel.counter}")
     parcel.parcelPlace = "Новое местоположение"
+    println("${parcel.parcelPlace}")
+    println("${parcel.counter}")
+    parcel.parcelPlace = "Более новое местоположение"
     println("${parcel.parcelPlace}")
     println("${parcel.counter}")
 
