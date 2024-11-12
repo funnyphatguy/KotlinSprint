@@ -14,7 +14,9 @@ class User(login: String, password: String) {
 
     var login = login
         set(value) {
-            if (field != value) println("Логин успешно изменен!")
+            field = value
+            println("Логин успешно изменен")
+
         }
 
     var password = password
@@ -31,7 +33,9 @@ class User(login: String, password: String) {
 fun main() {
 
     val user = User("Алешка", "dt4t")
+    println(user.login)
     user.login = "Петька"
+    println(user.login)
     println(user.password)
     user.password = "321!"
 }
