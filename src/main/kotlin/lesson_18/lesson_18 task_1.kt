@@ -1,25 +1,13 @@
 package org.example.lesson_18
 
-//CRM (система управления взаимоотношениями с клиентами) обрабатывает заказы в интернет-магазине.
-// Заказ содержит информацию: номер заказа и товары.
-// Если товар один, он хранится в виде строки, если несколько – в виде списка строк.
-//
-//Создай класс, который будет иметь свойство для хранения номера заказа.
-// Реализуй метод, которые будут выводить информацию о заказе в зависимости от количества товаров:
-//- Если заказан один товар: «Заказан товар: [название_товара]»
-//- Если заказано несколько товаров: «Заказаны следующие товары: [название_товара], … [название_товара]»
-//
-//Создай 2 объекта класса  и вызови у них метод вывода информации.
-// Реши задачу, используя полиморфизм с типом ad hoc для обработки одного или нескольких товаров.
-
 class Order(val number: Int) {
 
-    fun orders(product: String) {
+    fun showOrder(product: String) {
         val _product = product
         println("Заказан товар: $_product")
     }
 
-    fun orders(product: List<String>) {
+    fun showOrder(product: List<String>) {
 
         println("Заказаны товары: ${product.joinToString(",")}")
 
@@ -31,9 +19,9 @@ fun main() {
 
     val unoOrder = Order(3)
 
-    unoOrder.orders("PlayStation 5")
+    unoOrder.showOrder("PlayStation 5")
 
     val moreThanOneOrders = Order(4)
-    moreThanOneOrders.orders(listOf("клюшка", "иксбокс", "гитара"))
+    moreThanOneOrders.showOrder(listOf("клюшка", "иксбокс", "гитара"))
 
 }
