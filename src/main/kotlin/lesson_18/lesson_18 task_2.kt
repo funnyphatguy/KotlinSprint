@@ -1,15 +1,12 @@
 package org.example.lesson_18
 
-open class Dice() {
+abstract class Dice(numberOfEdge: Int) {
 
-    open fun throwDice(): String {
-        return ""
-    }
+    abstract fun throwDice(): String
 }
 
-class fourEdge() : Dice() {
+class FourEdge(val numberOfEdge: Int = 4) : Dice(numberOfEdge) {
 
-    val numberOfEdge: Int = 4
     override fun throwDice(): String {
 
         val diceThrow = 1..numberOfEdge
@@ -18,9 +15,9 @@ class fourEdge() : Dice() {
     }
 }
 
-class sixEdge() : Dice() {
+class SixEdge(val numberOfEdge: Int = 6) : Dice(numberOfEdge) {
 
-    val numberOfEdge: Int = 6
+
     override fun throwDice(): String {
 
         val diceThrow = 1..numberOfEdge
@@ -29,9 +26,8 @@ class sixEdge() : Dice() {
     }
 }
 
-class eightEdge() : Dice() {
+class EightEdge(val numberOfEdge: Int = 8) : Dice(numberOfEdge) {
 
-    val numberOfEdge: Int = 8
     override fun throwDice(): String {
 
         val diceThrow = 1..numberOfEdge
@@ -43,9 +39,9 @@ class eightEdge() : Dice() {
 
 fun main() {
 
-    val firstDice = fourEdge()
-    val secondDice = sixEdge()
-    val thirdDice = eightEdge()
+    val firstDice = FourEdge()
+    val secondDice = SixEdge()
+    val thirdDice = EightEdge()
 
     val newList: List<Dice> = listOf(firstDice, secondDice, thirdDice)
     for (i in newList) println("${i.throwDice()}")
