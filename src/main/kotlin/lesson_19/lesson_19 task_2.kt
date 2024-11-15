@@ -24,13 +24,9 @@ enum class Cathegory() {
 
 class Goods(val name: String, val id: Int, val cathegory: Cathegory) {
 
-    fun review() {
-        when (cathegory) {
-            Cathegory.CLOTHES -> println("$name: пальто, рубашки, куртки (фирмы 'Бейн')")
-            Cathegory.STATIONERY -> println("$name товары: ручки, бумага, карандаши")
-            Cathegory.OTHER -> println("$name: стулья, кресла, столы")
-        }
 
+    fun review() {
+        cathegory.getCathegory(cathegory)
     }
 }
 
