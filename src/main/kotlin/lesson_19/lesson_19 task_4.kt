@@ -1,18 +1,5 @@
 package org.example.lesson_19
 
-import java.security.KeyStore.TrustedCertificateEntry
-import kotlin.math.tan
-
-//В компьютерной игре танк может подбирать разные виды патронов. Патроны различаются силой удара.
-// Синие – 5 единиц, зеленые – 10, красные – 20.
-//
-//– создай enum класс для патронов и класс танка.
-// У танка должны быть методы вооружения новым типом патронов и выстрела.
-// При выстреле в консоль должен выводиться нанесенный урон;
-//– создай экземпляр танка и “произведи” несколько выстрелов разными патронами;
-//– экземпляр танка при создании ничем не заряжен;
-//– в решении должен использоваться enum.
-
 enum class Ammo(val damadge: Int) {
     BLUE(5),
     GREEN(10),
@@ -20,7 +7,7 @@ enum class Ammo(val damadge: Int) {
 }
 
 class Tank() {
-    var chargeOrNot: Boolean = false
+    var _ammo: Ammo? = null
 
     fun charge(ammo: Ammo) {
         when (ammo) {
@@ -28,18 +15,19 @@ class Tank() {
             Ammo.GREEN -> println("Вы зарядили танк зелеными патронами, урон ${Ammo.GREEN.damadge}")
             Ammo.RED -> println("Вы зарядили танк красными патронами, урон ${Ammo.RED.damadge}")
         }
-        chargeOrNot = true
+        _ammo = ammo
     }
 
     fun shoot(ammo: Ammo) {
-        if (chargeOrNot == true) {
+        if (_ammo == ammo) {
             when (ammo) {
                 Ammo.BLUE -> println("Выстрел синими патронами")
                 Ammo.GREEN -> println("Выстрел зелеными патронами")
                 Ammo.RED -> println("Выстрел танк красными патронами")
             }
-
-        } else println("Вы не зарядили пушку!!!")
+        } else if ((_ammo == null)) {
+            println("Вы не зарядили пушку")
+        } else println("Вы зарядили пушку другим типом снарядов")
     }
 }
 
@@ -47,5 +35,7 @@ fun main() {
 
     val tank = Tank().also { it.shoot(ammo = Ammo.BLUE) }
     tank.charge(ammo = Ammo.BLUE)
+    tank.shoot(ammo = Ammo.GREEN)
     tank.shoot(ammo = Ammo.BLUE)
+
 }
