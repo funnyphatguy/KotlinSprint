@@ -1,14 +1,13 @@
 package org.example.lesson_20
 
-class Player(val name: String, key: Boolean) {
-
-    val door: (Player) -> String = { if (key) "Игрок открыл дверь" else "Дверь заперта" }
+class Player(val name: String, val key: Boolean) {
 
 }
 
 fun main() {
 
     val player = Player("Алешка", false)
-    println(player.door(player))
+    val door: (Player) -> String = { if (player.key) "Игрок открыл дверь" else "Дверь заперта" }
+    println(door(player))
 
 }
