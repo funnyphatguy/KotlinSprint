@@ -13,7 +13,6 @@ fun main() {
 
     val simpleList: List<Int> = listOf(4, 6, 2, 7, 9, 10, 18, 4)
 
-
     println("Сумма четных чисел в массиве: ${simpleList.evenNumbersSum()}")
 
 }
