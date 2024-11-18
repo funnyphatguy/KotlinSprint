@@ -4,9 +4,7 @@ fun String.vowelCount(): Int {
 
     var count = 0
     val vowels: List<Char> = listOf('a', 'e', 'i', 'o', 'u', 'y')
-    for (i in this)
-        if (i in vowels)
-            count++
+    count = this.count() { it in vowels }
     return count
 }
 
