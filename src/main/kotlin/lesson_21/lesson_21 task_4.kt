@@ -6,7 +6,6 @@ fun main() {
 
     val file = File("textFile.txt")
 
-
     file.addTextInFile("ЭТО ВТОРОЕ")
     file.addTextInFile("ЭТО ПЕРВОЕ")
 
