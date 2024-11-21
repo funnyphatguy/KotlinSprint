@@ -11,7 +11,7 @@ class MainScreenModel() {
 
     val newState = mainScreenState
 
-    fun setNewState(newState: MainScreenState) {
+    fun loadData(newState: MainScreenState) {
 
         mainScreenState = newState
         mainScreenState = newState.copy(isLoading = true)
