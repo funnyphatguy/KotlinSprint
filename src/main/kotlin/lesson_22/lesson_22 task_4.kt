@@ -11,9 +11,8 @@ class MainScreenModel() {
 
     fun loadData() {
 
-        mainScreenState = MainScreenState().copy()
-        mainScreenState = MainScreenState().copy(isLoading = true)
-        mainScreenState = MainScreenState().copy(data = "Data", isLoading = true)
+        mainScreenState = mainScreenState.copy(isLoading = true)
+        mainScreenState = mainScreenState.copy(data = "Data", isLoading = true)
 
     }
 
