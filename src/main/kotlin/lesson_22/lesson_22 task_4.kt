@@ -7,15 +7,13 @@ data class MainScreenState(
 
 class MainScreenModel() {
 
-    var mainScreenState: MainScreenState = MainScreenState()
+    var mainScreenState = MainScreenState()
 
-    val newState = mainScreenState
+    fun loadData() {
 
-    fun loadData(newState: MainScreenState) {
-
-        mainScreenState = newState
-        mainScreenState = newState.copy(isLoading = true)
-        mainScreenState = newState.copy(data = "Data", isLoading = true)
+        mainScreenState = MainScreenState().copy()
+        mainScreenState = MainScreenState().copy(isLoading = true)
+        mainScreenState = MainScreenState().copy(data = "Data", isLoading = true)
 
     }
 
