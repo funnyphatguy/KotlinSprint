@@ -1,6 +1,6 @@
 package org.example.lesson13
 
-class Contactss(
+class TheContacts(
     var name: String? = null,
     var number: String? = null,
     var company: String? = null,
@@ -9,8 +9,8 @@ class Contactss(
 
         val formattedNumber = try {
             number?.toLong()
-        } catch (e: NumberFormatException) {
-            "NumberFormatException"
+        } catch (e: Exception) {
+            e::class.simpleName
         }
 
         println(
@@ -23,6 +23,6 @@ class Contactss(
 }
 
 fun main() {
-    val con = Contactss(name = "Коля", number = "Рикон", company = "Газпром")
+    val con = TheContacts(name = "Коля", number = "Рикон", company = "Газпром")
     con.getInfo()
 }
