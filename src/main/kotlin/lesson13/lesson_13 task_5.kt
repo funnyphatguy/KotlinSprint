@@ -10,7 +10,7 @@ class TheContacts(
         val formattedNumber = try {
             number?.toLong()
         } catch (e: Exception) {
-            e::class.simpleName
+            println("Произошла ошибка: ${e::class.simpleName}")
         }
 
         println(
