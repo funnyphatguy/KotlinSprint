@@ -3,7 +3,6 @@ package org.example.lesson_20
 class Robo(val name: String) {
 
     var phrase: String? = null
-    var phraseReverse: String? = null
 
     fun say(): String {
 
@@ -18,19 +17,22 @@ class Robo(val name: String) {
             )
             phrase = phrases.random()
             return phrase!!
-        } else return phraseReverse!!
+        }
+        else return modifier(phrase!!)
     }
 
-    fun setModifier(): String {
-        phraseReverse = phrase!!.reversed()
-        return phraseReverse!!
+    private var modifier: (String) -> String = { it }
+
+    fun setModifier(newModifier: (String) -> String) {
+        this.modifier = newModifier
     }
 }
 
 fun main() {
 
     val robot = Robo(name = "Терминатор")
+
     println(robot.say())
-    robot.setModifier()
+    robot.setModifier({ it.reversed() })
     println(robot.say())
 }
