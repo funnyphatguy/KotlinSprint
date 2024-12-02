@@ -2,6 +2,8 @@ package org.example.lesson_16
 
 class Player(val name: String, var health: Int, var power: Int) {
 
+     var isDead = false
+
     fun toFight(damage: Int): Int {
         health = health - damage
         if (health <= 0) {
@@ -11,23 +13,21 @@ class Player(val name: String, var health: Int, var power: Int) {
     }
 
     private fun toDie() {
+        isDead = true
         health = 0
         power = 0
-        println("Игрок $name умер")
+        println("Игрок $name пал..")
     }
 
     fun toHeal(heal: Int): Int {
-        if (health <= 0) {
+        if (isDead) {
             println("Вы пытаетесь вылечить персонажа, но персонаж погиб и его невозможно вылечить")
             return 0
-        } else if (health > 100) {
-            println("У вашего персонажа максимальное количество здоровья")
-            health = 100
+        } else {
+            health = health + heal
+            println("Вы вылечили персонажа, его текущие характеристики:")
             return health
         }
-        health = health + heal
-        println("Вы вылечили персонажа, его текущие характеристики:")
-        return health
     }
 
     override fun toString(): String {
@@ -41,13 +41,15 @@ fun main() {
 
     player.toFight(60)
     println(player)
-
+    println("")
     player.toHeal(20)
     println(player)
-
+    println("")
     player.toFight(60)
     println(player)
-
+    println("")
+    player.toFight(30)
+    println("")
     player.toHeal(10)
 
 }
