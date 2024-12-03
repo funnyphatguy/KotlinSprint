@@ -2,14 +2,19 @@ package org.example.lesson_16
 
 class Player(val name: String, var health: Int, var power: Int) {
 
-     var isDead = false
+    var isDead = false
 
     fun toFight(damage: Int): Int {
-        health = health - damage
-        if (health <= 0) {
-            toDie()
+        if (isDead) {
+            println("Персонаж погиб и больше не может участвовать в сражениях")
+            return 0
+        } else {
+            health = health - damage
+            if (health <= 0) {
+                toDie()
+            }
+            return health
         }
-        return health
     }
 
     private fun toDie() {
